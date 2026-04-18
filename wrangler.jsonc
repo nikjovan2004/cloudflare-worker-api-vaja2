@@ -1,6 +1,6 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "cloudflare-worker-api",
+  "name": "cloudflare-worker-api-vaja2",
   "main": "index.js",
   "compatibility_date": "2026-04-15"
 }
