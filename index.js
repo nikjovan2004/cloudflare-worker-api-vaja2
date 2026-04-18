@@ -30,6 +30,14 @@ export default {
       })
     }
 
+    if (url.pathname === "/api/student") {
+      return Response.json({
+        name: "Nik Jovan",
+        program: "Višja računalniška šola",
+        course: "Upravljanje oblačnih storitev"
+      })
+    }
+
   if (url.pathname === "/api/quote") {
     try {
       const res = await fetch("https://zenquotes.io/api/random")
