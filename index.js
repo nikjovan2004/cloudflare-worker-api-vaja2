@@ -10,7 +10,9 @@ export default {
         <ul>
           <li>/api/time</li>
           <li>/api/hello?name=Ana</li>
+          <li>/api/student</li>
           <li>/api/quote</li>
+          
         </ul>
         `,
         { headers: { "content-type": "text/html" } }
