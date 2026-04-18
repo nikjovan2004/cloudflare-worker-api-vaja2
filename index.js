@@ -12,6 +12,7 @@ export default {
           <li>/api/hello?name=Ana</li>
           <li>/api/student</li>
           <li>/api/quote</li>
+          <li>/api/timezone?tz=Europe/Ljubljana</li>
           
         </ul>
         `,
@@ -56,6 +57,30 @@ export default {
       )
     }
   }
+
+  if (url.pathname === "/api/timezone") {
+  try {
+    const timezone = url.searchParams.get("tz") || "Europe/Ljubljana"
+
+    const res = await fetch(
+      `https://timeapi.io/api/time/current/zone?timeZone=${encodeURIComponent(timezone)}`
+    )
+    const data = await res.json()
+
+    return Response.json({
+      timezone: data.timeZone,
+      date: data.date,
+      time: data.time,
+      dayOfWeek: data.dayOfWeek,
+      dateTime: data.dateTime
+    })
+  } catch (e) {
+    return Response.json(
+      { error: "Timezone API error" },
+      { status: 500 }
+    )
+  }
+}
 
     return new Response("Not found", { status: 404 })
   }
