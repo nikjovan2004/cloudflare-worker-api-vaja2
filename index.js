@@ -12,7 +12,7 @@ export default {
           <li>/api/hello?name=Ana</li>
           <li>/api/student</li>
           <li>/api/quote</li>
-          <li>/api/timezone</li>
+          <li>/api/timezone?tz=Europe/Ljubljana</li>
           
         </ul>
         `,
